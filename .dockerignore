@@ -1,0 +1,17 @@
+*.rl
+!data/seed/hive.rl
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+count.txt
+.env
+.envrc
+.vercel
+.nitro
+.tanstack
+.output
+.vinxi
+todos.json
+.vitest/
