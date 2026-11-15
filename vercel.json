@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/hive",
+      "destination": "https://hive4j.fly.dev/hive",
+      "permanent": false
+    },
+    {
+      "source": "/hive/:path*",
+      "destination": "https://hive4j.fly.dev/hive/:path*",
+      "permanent": false
+    }
+  ]
+}

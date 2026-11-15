@@ -98,7 +98,7 @@ const LandingPage = () => (
             Who it is for
           </a>
         </nav>
-        <Button size="sm" nativeButton={false} render={<Link to="/hive" />}>
+        <Button size="sm" nativeButton={false} render={<Link to="/hive" reloadDocument />}>
           Open the demo
         </Button>
       </div>
@@ -116,7 +116,7 @@ const LandingPage = () => (
             the graph behind the answer, and know which answers went stale.
           </p>
           <div className="mt-8">
-            <Button size="lg" nativeButton={false} render={<Link to="/hive" />}>
+            <Button size="lg" nativeButton={false} render={<Link to="/hive" reloadDocument />}>
               Open the demo
               <HugeiconsIcon icon={ArrowRight01Icon} strokeWidth={2} data-icon="inline-end" />
             </Button>
@@ -340,7 +340,7 @@ const LandingPage = () => (
                     on one file.
                   </p>
                 </div>
-                <Button size="lg" nativeButton={false} render={<Link to="/hive" />}>
+                <Button size="lg" nativeButton={false} render={<Link to="/hive" reloadDocument />}>
                   Open the demo
                   <HugeiconsIcon icon={ArrowRight01Icon} strokeWidth={2} data-icon="inline-end" />
                 </Button>
@@ -381,7 +381,7 @@ const LandingPage = () => (
             <Button
               size="lg"
               nativeButton={false}
-              render={<Link to="/hive" />}
+              render={<Link to="/hive" reloadDocument />}
               className="bg-[oklch(0.54_0.16_35)] text-white hover:bg-[oklch(0.58_0.16_35)]"
             >
               Open the demo

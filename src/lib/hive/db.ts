@@ -15,7 +15,9 @@ const paths = () => {
   const root = resolve(process.cwd());
   return {
     seed: join(root, "data/seed/hive.rl"),
-    run: join(root, "data/run/hive.rl"),
+    run: process.env.HIVE_RUN_STORE
+      ? resolve(process.env.HIVE_RUN_STORE)
+      : join(root, "data/run/hive.rl"),
   };
 };
 

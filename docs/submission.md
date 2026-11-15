@@ -92,15 +92,16 @@ The repository extends a private TanStack Start starter (auth, Drizzle, oRPC sca
 
 ## Links
 
-- Repository: _add public URL with the `relate` topic_
+- Repository: https://github.com/VesperQuartz/hive4j
+- Live demo: https://hive4j.fly.dev
 - Demo video: _add 1–2 minute URL_
 - Try it: `bun install && bun run hive:seed && bun dev`, then open `/hive`.
 
 ## Submission checklist
 
 - [x] README with setup, mode, graph model, and data location
-- [ ] Public GitHub repository
-- [ ] GitHub topic `relate` (and recommended `relate-neo4j-hackathon`)
+- [x] Public GitHub repository
+- [x] GitHub topic `relate` (and recommended `relate-neo4j-hackathon`)
 - [x] Persistent Relate store committed (`data/seed/hive.rl`)
 - [x] Working code with Relate running
 - [x] 1–2 minute demo script (`docs/demo-script.md`)

@@ -6,6 +6,8 @@ Hive is a local-first answer engine over a small team's notes and decisions. You
 
 Built for the [Relate by Neo4j Hackathon](https://relate.devpost.com/) — theme: _Context, connected_.
 
+**Live demo:** https://hive4j.fly.dev
+
 ![Hive answer with a context receipt](./docs/hive.png)
 
 ## The workspace
@@ -113,6 +115,20 @@ relate -d /tmp/hive.rl --read-only --mode table \
 
 `bun run hive:seed` deletes and rebuilds `data/seed/hive.rl`, and removes `data/run/hive.rl` so the next boot starts from the seed.
 
+## Deploy
+
+The live demo runs as one Fly machine with a 1 GB volume at `/data`. The app is one writer, one store, so it stays on a single machine.
+
+```bash
+fly volumes create hive_data --region fra --size 1   # once per app
+fly secrets set BETTER_AUTH_SECRET="$(openssl rand -hex 32)"
+fly deploy
+```
+
+`HIVE_RUN_STORE=/data/hive.rl` keeps the working graph on the volume; the seed in the image stays read-only. The `Dockerfile` builds the Nitro output with Bun, installs production dependencies, and copies `data/seed`. `fly.toml` pins the app to one machine, one shared CPU, and 1 GB of memory.
+
+The Vercel deployment is the landing page only; `/hive` redirects to Fly.
+
 ## How an answer is built
 
 ```mermaid
@@ -204,6 +220,9 @@ src/components/landing/         landing mark, demo graph
 src/routes/api/hive/            ask, overview, library, notes, decisions, correct
 src/routes/(dashboard)/hive/    layout, ask, notes, decisions, review
 src/components/hive/            shell, answer, receipt, graph, dialogs
+Dockerfile                      Bun build + production runtime
+fly.toml                        one machine, one volume
+vercel.json                     sends /hive to Fly
 ```
 
 ## Origin
